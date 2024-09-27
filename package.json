@@ -1,0 +1,24 @@
+{
+  "name": "projeto-mario-kart",
+  "version": "1.0.0",
+  "description": "jogo rpg de corrida ao estilo mario kart",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oberon4589/marioKart.git"
+  },
+  "keywords": [
+    "rpg",
+    "corrida",
+    "mario"
+  ],
+  "author": "Oberon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oberon4589/marioKart/issues"
+  },
+  "homepage": "https://github.com/oberon4589/marioKart#readme"
+}
