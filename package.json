@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/oberon4589/marioKart/issues"
   },
-  "homepage": "https://github.com/oberon4589/marioKart#readme"
+  "homepage": "https://github.com/oberon4589/marioKart#readme",
+  "dependencies": {
+    "projeto-mario-kart": "file:"
+  }
 }
