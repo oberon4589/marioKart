@@ -19,9 +19,20 @@ async function rollDice() {
   return Math.floor(Math.random() * 6) + 1;
 }
 
+//exemplo de function chains, funções que chamam outras funções
+async function playRacingEngine(character1, character20) {
+  for (let round = 1; round <= 5; round++) {
+    console.log(`🏁 Rodada ${round}`);
+
+    //Sortear bloco
+  }
+}
+
 //exemplo de função auto-invocável
 (async function main() {
   console.log(
     `🏁🚨 Corrida entre ${player1.NOME} e ${player2.NOME} está começando...`
   );
+
+  await playRacingEngine(player1, player2);
 })();
