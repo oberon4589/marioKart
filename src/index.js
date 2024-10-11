@@ -104,6 +104,18 @@ async function playRacingEngine(character1, character2) {
       powerResult1 = diceResult1 + character1.PODER;
       powerResult2 = diceResult2 + character2.PODER;
     }
+
+    //verificar quem ganhou"
+
+    if (totalTestSkill1 > totalTestSkill2) {
+      console.log(`${character1.NOME} marcou um ponto!`);
+      character1.PONTOS++;
+    } else if (totalTestSkill2 > totalTestSkill1) {
+      console.log(`${character2.NOME} marcou um ponto!`);
+      character2.PONTOS++;
+    }
+
+    console.log("--------------------");
   }
 }
 
