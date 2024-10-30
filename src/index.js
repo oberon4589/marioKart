@@ -120,11 +120,19 @@ async function playRacingEngine(character1, character2) {
         character1.PODER
       );
 
-      character2.PONTOS -=
-        powerResult1 > powerResult2 && character2.PONTOS > 0 ? 1 : 0;
+      if (
+        (character2.PONTOS -=
+          powerResult1 > powerResult2 && character2.PONTOS > 0 ? 1 : 0)
+      ) {
+        console.log(
+          `${character1.NOME} Venceu o confronto! ${character2.NOME} perdeu um ponto!🐢"`
+        );
+        character2.PONTOS--;
+      }
 
-      character1.PONTOS -=
-        powerResult2 > powerResult1 && character1.PONTOS > 0 ? 1 : 0;
+      if (powerResult2 > powerResult1 && character1.PONTOS > 0 ? 1 : 0) {
+        character1.PONTOS--;
+      }
 
       console.log(powerResult1 === powerResult2 ? "Empate!" : "");
     }
@@ -143,6 +151,19 @@ async function playRacingEngine(character1, character2) {
   }
 }
 
+//declara vencedor
+async function declareWinner(character1, character2) {
+  console.log("Resultado final:");
+  console.log(`${character1.NOME}: ${character1.PONTOS} pontos`);
+  console.log(`${character2.NOME}: ${character2.PONTOS} pontos`);
+
+  if (character1.PONTOS > character2.PONTOS)
+    console.log(`\n🏆 ${character1.NOME} venceu a corrida! 🏆`);
+  else if (character2.PONTOS > character1.PONTOS)
+    console.log(`\n🏆 ${character2.NOME} venceu a corrida! 🏆`);
+  else console.log("A corrida terminou empatada!");
+}
+
 //exemplo de função auto-invocável
 (async function main() {
   console.log(
@@ -150,4 +171,5 @@ async function playRacingEngine(character1, character2) {
   );
 
   await playRacingEngine(player1, player2);
+  await declareWinner(player1, player2);
 })();
